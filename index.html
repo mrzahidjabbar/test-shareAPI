@@ -7,19 +7,11 @@
     <style></style>
   </head>
   <body>
-    <h1>Sharing MDN</h1>
+    <h1>Sharing url</h1>
 
-    <p>
-      We love MDN, and want to share it as far as we can! Click the following
-      button to share MDN's home page using your system's native share
-      functionality. See the
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share#Browser_compatibility"
-        >browsers this currently works on</a
-      >.
-    </p>
+    <p>Have a good day!</p>
 
-    <p><button>Share MDN!</button></p>
+    <p><button>Share url!</button></p>
 
     <p class="result"></p>
 
@@ -27,23 +19,24 @@
       let shareData = {
         title: "zahid.dev",
         text: "Learn with me",
+        url: "www.zahidjabbar.com",
       };
       const btn = document.querySelector("button");
       const resultPara = document.querySelector(".result");
 
       btn.addEventListener("click", () => {
         if (
-          /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
             navigator.userAgent
           )
         ) {
           navigator
             .share(shareData)
-            .then(() => (resultPara.textContent = "MDN shared successfully"))
+            .then(() => (resultPara.textContent = "url shared successfully"))
             .catch((e) => (resultPara.textContent = "Error: " + e));
         } else {
           console.log("client is using a laptop");
-          navigator.clipboard.writeText("www.zahidjabbar.com");
+          navigator.clipboard.writeText("www.github.com");
         }
       });
     </script>
