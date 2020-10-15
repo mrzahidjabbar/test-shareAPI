@@ -32,7 +32,7 @@
         ) {
           navigator
             .share(shareData)
-            .then(() => (resultPara.textContent = "url shared successfully"))
+            .then(() => (resultPara.textContent = navigator.userAgent))
             .catch((e) => (resultPara.textContent = "Error: " + e));
         } else {
           console.log("client is using a laptop");
