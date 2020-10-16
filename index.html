@@ -9,7 +9,9 @@
   <body>
     <h1>Sharing Url</h1>
 
-    <p>Have a good day!</p>
+    <p>
+      Open the page in mobile then click below button to see the functionality.
+    </p>
 
     <p><button>Share url!</button></p>
 
@@ -32,7 +34,7 @@
         ) {
           navigator
             .share(shareData)
-            .then(() => (resultPara.textContent = navigator.userAgent))
+            .then(() => (resultPara.textContent = "URL is copied to clipboard"))
             .catch((e) => (resultPara.textContent = "Error: " + e));
         } else {
           console.log("client is using a laptop");
