@@ -38,8 +38,10 @@
             .catch((e) => (resultPara.textContent = "Error: " + e));
         } else {
           console.log("client is using a laptop");
-          navigator.clipboard.writeText("www.github.com");
-          resultPara.textContent = "URL is copied to clipboard";
+          navigator.clipboard
+            .writeText("www.github.com")
+            .then(() => (resultPara.textContent = "URL is copied to clipboard"))
+            .catch((e) => (resultPara.textContent = "Error: " + e));
         }
       });
     </script>
